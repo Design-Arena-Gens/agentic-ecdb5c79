@@ -1,0 +1,45 @@
+:root{
+  --bg: #0b0f17;
+  --panel: #121826;
+  --text: #e8eefc;
+  --muted: #9fb0d2;
+  --accent: #7c9cff;
+  --accent-2: #46d7b2;
+  --border: #1f2a44;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: linear-gradient(180deg, #0b0f17 0%, #0e1322 100%);
+  color: var(--text);
+}
+.app-shell{min-height:100vh; display:flex; flex-direction:column}
+.app-header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; border-bottom:1px solid var(--border); background:rgba(10,14,24,0.6); position:sticky; top:0; backdrop-filter: blur(8px)}
+.brand{display:flex; align-items:center; gap:12px}
+.brand .logo{font-size:24px}
+.brand h1{margin:0; font-size:18px}
+.tagline{margin:2px 0 0; font-size:12px; color: var(--muted)}
+.gh{color:var(--muted); text-decoration:none}
+.app-main{flex:1; padding:24px}
+.app-footer{padding:16px 20px; border-top:1px solid var(--border); color:var(--muted)}
+
+.container{max-width:1100px; margin:0 auto; display:grid; gap:20px}
+.controls{background: var(--panel); border:1px solid var(--border); border-radius:12px; padding:16px; display:grid; gap:16px}
+.row{display:flex; gap:12px; align-items:flex-end}
+.grid{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px}
+@media (max-width: 780px){ .grid{ grid-template-columns:1fr } .row{flex-wrap:wrap} }
+.field{display:flex; flex-direction:column; gap:6px; min-width:200px}
+.field.small{max-width:160px}
+.field.flex1{flex:1}
+label{font-size:12px; color: var(--muted)}
+input, select, textarea{ width:100%; background:#0e1527; color:var(--text); border:1px solid var(--border); border-radius:8px; padding:10px 12px; outline:none}
+input:focus, select:focus, textarea:focus{border-color: var(--accent)}
+.spacer{flex:1}
+.btn{background: var(--accent); color:#06122d; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:600}
+.btn.secondary{background: var(--accent-2)}
+.output{background: var(--panel); border:1px solid var(--border); border-radius:12px; padding:16px; display:grid; gap:12px}
+.output-header{display:flex; align-items:center; justify-content:space-between}
+.prompt{width:100%; min-height:200px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:14px}
+.tips{color:var(--muted)}
+.tips summary{cursor:pointer}
